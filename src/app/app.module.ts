@@ -3,10 +3,20 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AlertModule} from "ngx-bootstrap/alert";
 
 import { AppComponent } from './app.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { SigninComponent } from './pages/signin/signin.component';
+import { SignupComponent } from './pages/signup/signup.component';
+import { HomeComponent } from './pages/home/home.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    FooterComponent,
+    NavbarComponent,
+    SigninComponent,
+    SignupComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
