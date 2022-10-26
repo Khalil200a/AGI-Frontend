@@ -1,89 +1,5 @@
-<!-- Navbar -->
-<!--<nav id="navbar-main" class="navbar navbar-expand-sm bg-white navbar-dark position-sticky top-0 shadow py-2">-->
-<!--  <div class="container">-->
-<!--    <a class="navbar-brand mr-lg-5" href="./index.html">-->
-<!--      <img src="./assets/img/brand/blue.png">-->
-<!--    </a>-->
-<!--    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar_global"-->
-<!--            aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">-->
-<!--      <span class="navbar-toggler-icon"></span>-->
-<!--    </button>-->
-<!--    <div class="navbar-collapse collapse" id="navbar_global">-->
-<!--      <div class="navbar-collapse-header">-->
-<!--        <div class="row">-->
-<!--          <div class="col-6 collapse-brand">-->
-<!--            <a href="./index.html">-->
-<!--              <img src="./assets/images/logo.png">-->
-<!--            </a>-->
-<!--          </div>-->
-<!--          <div class="col-6 collapse-close">-->
-<!--            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar_global"-->
-<!--                    aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">-->
-<!--              <span></span>-->
-<!--              <span></span>-->
-<!--            </button>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--      <ul class="navbar-nav navbar-nav-hover align-items-lg-center">-->
-<!--        <li class="nav-item dropdown">-->
-<!--          <a href="#" class="nav-link" data-toggle="dropdown" href="#" role="button">-->
-<!--            <i class="ni ni-collection d-lg-none"></i>-->
-<!--            <span class="nav-link-inner&#45;&#45;text">Home</span>-->
-<!--          </a>-->
-<!--        </li>-->
-<!--        <li class="nav-item dropdown">-->
-<!--          <a href="#" class="nav-link" data-toggle="dropdown" href="#" role="button">-->
-<!--            <i class="ni ni-collection d-lg-none"></i>-->
-<!--            <span class="nav-link-inner&#45;&#45;text">AboutUs</span>-->
-<!--          </a>-->
-<!--          <div class="dropdown-menu">-->
-<!--            <a href="./examples/landing.html" class="dropdown-item">Our Vision</a>-->
-<!--            <a href="./examples/profile.html" class="dropdown-item">Our Believe</a>-->
-<!--          </div>-->
-<!--        </li>-->
-<!--        <li class="nav-item dropdown">-->
-<!--          <a href="#" class="nav-link" data-toggle="dropdown" href="#" role="button">-->
-<!--            <i class="ni ni-collection d-lg-none"></i>-->
-<!--            <span class="nav-link-inner&#45;&#45;text">Our Team</span>-->
-<!--          </a>-->
-<!--        </li>-->
-<!--        <li class="nav-item dropdown">-->
-<!--          <a href="#" class="nav-link" data-toggle="dropdown" href="#" role="button">-->
-<!--            <i class="ni ni-collection d-lg-none"></i>-->
-<!--            <span class="nav-link-inner&#45;&#45;text">Courses</span>-->
-<!--          </a>-->
-<!--        </li>-->
-<!--      </ul>-->
-<!--      <ul class="navbar-nav align-items-lg-center ml-lg-auto">-->
-<!--        <li class="nav-item">-->
-<!--          <a class="nav-link nav-link-icon" href="https://www.facebook.com/CreativeTim/" target="_blank"-->
-<!--             data-toggle="tooltip" title="Like us on Facebook">-->
-<!--            <i class="fa fa-facebook-square"></i>-->
-<!--            <span class="nav-link-inner&#45;&#45;text d-lg-none">Facebook</span>-->
-<!--          </a>-->
-<!--        </li>-->
-<!--        <li class="nav-item">-->
-<!--          <a class="nav-link nav-link-icon" href="https://www.instagram.com/creativetimofficial" target="_blank"-->
-<!--             data-toggle="tooltip" title="Follow us on Instagram">-->
-<!--            <i class="fa fa-instagram"></i>-->
-<!--            <span class="nav-link-inner&#45;&#45;text d-lg-none">Instagram</span>-->
-<!--          </a>-->
-<!--        </li>-->
-<!--        <li class="nav-item">-->
-<!--          <a class="nav-link nav-link-icon" href="https://twitter.com/creativetim" target="_blank" data-toggle="tooltip"-->
-<!--             title="Follow us on Twitter">-->
-<!--            <i class="fa fa-twitter-square"></i>-->
-<!--            <span class="nav-link-inner&#45;&#45;text d-lg-none">Twitter</span>-->
-<!--          </a>-->
-<!--        </li>-->
-<!--      </ul>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--</nav>-->
-<!-- End Navbar -->
 <nav class="navbar navbar-expand-sm navbar-dark pl-5 fixed-top">
-  <a href="index.php" class="navbar-brand">Elearning</a>
+  <a routerLink="/home" class="navbar-brand">E-learning</a>
   <span class="navbar-text">Learn and Implement</span>
   <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#myMenu">
     <span class="navbar-toggler-icon"></span>
@@ -96,7 +12,7 @@
       <li class="nav-item custom-nav-item"><a href="#Feedback" class="nav-link">Feedback</a></li>
       <li class="nav-item custom-nav-item"><a href="#Contact" class="nav-link">Contact</a></li>
       <li class="nav-item mt-2">
-        <a class="btn btn-outline-primary" href="https://www.creative-tim.com/builder/argon" target="_blank">
+        <a class="btn btn-outline-primary" routerLink="/signin">
           <span class="nav-link-inner--text">Sign In</span>
         </a>
       </li>
