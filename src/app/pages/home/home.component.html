@@ -46,7 +46,8 @@
           <div class="info info-horizontal info-hover-primary mt-5">
             <div class="description pl-4">
               <h5 class="title">Our believe</h5>
-              <p class="paragraph">Learning is the source of human progress. It has the power to transform our world from illness to
+              <p class="paragraph">Learning is the source of human progress. It has the power to transform our world
+                from illness to
                 health, from poverty to prosperity, from conflict to peace.
                 It has the power to transform our lives for ourselves, for our families, for our communities. No matter
                 who we are or where we are, learning empowers us to change and grow
@@ -59,7 +60,8 @@
           <div class="info info-horizontal info-hover-primary mt-5">
             <div class="description pl-4">
               <h5 class="title">Our Mission</h5>
-              <p class="paragraph">Improving lives through learning, whether you want to learn or to share what you know, you’ve come to
+              <p class="paragraph">Improving lives through learning, whether you want to learn or to share what you
+                know, you’ve come to
                 the right place. As a global destination for online learning, we connect people through knowledge.
               </p>
             </div>
@@ -73,14 +75,32 @@
   </div>
   <div class="section features-1">
     <div class="container">
-      <div class="row">
-        <div class="col-md-8 mx-auto text-center">
-          <span class="badge badge-primary badge-pill mb-3">Insight</span>
-          <h3 class="display-3 sub-title">Our Popular Courses</h3>
-          <p class="lead">The time is now for it to be okay to be great. For being a bright color. For standing out.</p>
-        </div>
-<!--        <app-popular-courses></app-popular-courses>-->
+      <div class="col-md-8 mx-auto text-center">
+        <span class="badge badge-primary badge-pill mb-3">Insight</span>
+        <h3 class="display-3 sub-title">Our Popular Courses</h3>
+        <p class="lead">The time is now for it to be okay to be great. For being a bright color. For standing out.</p>
+      </div>
+      <div class="card-deck">
+        <ng-container *ngFor="let course of courses; index as i; count as len">
+          <ng-container *ngIf="1<i&&i>4">
+            <div class="card">
+              <img [src]="course.course_img" class="card-img-top" [alt]="course.course_name"/>
+              <div class="card-body">
+                <h5 class="card-title">{{course.course_name}}</h5>
+                <p class="card-text">{{course.course_desc}}</p>
+              </div>
+              <div class="card-footer">
+                <p class="card-text d-inline">Price: <small>
+                  <del>MAD {{course.course_original_price}}</del>
+                </small> <span class="font-weight-bolder">MAD {{course.course_price}}</span></p>
+                <a class="btn btn-primary text-white font-weight-bolder float-right"
+                   href="coursedetails.php?course_id='.$course_id.'">Enroll</a>
+              </div>
+            </div>
+          </ng-container>
+        </ng-container>
       </div>
     </div>
   </div>
 </div>
+

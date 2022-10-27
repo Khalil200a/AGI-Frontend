@@ -7,6 +7,29 @@
   color: $paragraph-color;
 }
 
+.card-group{
+  display: flex;
+  flex-direction: row;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-footer{
+  background-color: $navbar-color;
+}
+
+.card-body h5{
+  color: $sub-title-color;
+}
+
+.card-body{
+  background-color: $background-color;
+  color: $paragraph-color;
+}
+
 .fas{
   color: $paragraph-color;
 }

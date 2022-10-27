@@ -14,10 +14,12 @@ export class HomeComponent implements OnInit {
   constructor(private courseService: CourseService) { }
 
   ngOnInit(): void {
-    this.courseService.getCourses().subscribe((res)=>{
+    console.log("hi");
+    this.courseService.getCourses().subscribe((res:Course[])=>{
+      console.log(res);
       this.courses = res;
+      console.log("hello");
     });
-    console.log(this.courses);
   }
 
 }
