@@ -1,0 +1,82 @@
+[
+  {
+    "course_id": 8,
+    "course_name": "Learn Guitar The Easy Wayy",
+    "course_desc": "This course is your \"Free Pass\" to playing guitar. It is the most direct and to the point complete online guitar course.",
+    "course_author": "Adil",
+    "course_img": "assets/images/courseimg/Guitar.jpg",
+    "course_duration": "3 Hours",
+    "course_price": 1655,
+    "course_original_price": 1800
+  },
+  {
+    "course_id": 9,
+    "course_name": "Complete PHP Bootcamp",
+    "course_desc": "This course will help you get all the Object Oriented PHP, MYSQLi and ending the course by building a CMS system.",
+    "course_author": "Rajesh Kumar",
+    "course_img": "assets/images/courseimg/php.jpg",
+    "course_duration": "3 Months",
+    "course_price": 700,
+    "course_original_price": 1700
+  },
+  {
+    "course_id": 10,
+    "course_name": "Learn Python A-Z",
+    "course_desc": "This is the most comprehensive, yet straight-forward, course for the Python programming language.",
+    "course_author": "Rahul Kumar",
+    "course_img": "assets/images/courseimg/Python.jpg",
+    "course_duration": "4 Months",
+    "course_price": 800,
+    "course_original_price": 1800
+  },
+  {
+    "course_id": 11,
+    "course_name": "Hands-on Artificial Intelligence",
+    "course_desc": "Learn and Master how AI works and how it is changing our lives in this Course.\r\nlives in this Course.",
+    "course_author": "Jay Veeru",
+    "course_img": "assets/images/courseimg/ai.jpg",
+    "course_duration": "6 Months",
+    "course_price": 900,
+    "course_original_price": 1900
+  },
+  {
+    "course_id": 12,
+    "course_name": "Learn Vue JS",
+    "course_desc": "The skills you will learn from this course is applicable to the real world, so you can go ahead and build similar app.",
+    "course_author": "Jay Shukla",
+    "course_img": "assets/images/courseimg/vue.jpg",
+    "course_duration": "2 Months",
+    "course_price": 100,
+    "course_original_price": 1000
+  },
+  {
+    "course_id": 13,
+    "course_name": "Angular JS",
+    "course_desc": "Angular is one of the most popular frameworks for building client apps with HTML, CSS and TypeScript.",
+    "course_author": "Sonam Gupta",
+    "course_img": "assets/images/courseimg/angular.jpg",
+    "course_duration": "4 Month",
+    "course_price": 800,
+    "course_original_price": 1600
+  },
+  {
+    "course_id": 16,
+    "course_name": "Python Complete",
+    "course_desc": "This is complete Python COurse",
+    "course_author": "RK",
+    "course_img": "assets/images/courseimg/Python.jpg",
+    "course_duration": "4 hours",
+    "course_price": 500,
+    "course_original_price": 4000
+  },
+  {
+    "course_id": 17,
+    "course_name": "Learn React Native",
+    "course_desc": "THis is react native for android and iso app development",
+    "course_author": "GeekyShows",
+    "course_img": "assets/images/courseimg/Machine.jpg",
+    "course_duration": "2 months",
+    "course_price": 200,
+    "course_original_price": 3000
+  }
+]
