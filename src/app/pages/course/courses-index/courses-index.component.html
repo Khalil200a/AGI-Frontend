@@ -1,0 +1,34 @@
+<div class="container-fluid bg-dark"> <!-- Start Course Page Banner -->
+  <div class="row">
+    <img alt="courses" src="assets/images/coursebanner.jpg" style=""/>
+  </div>
+</div> <!-- End Course Page Banner -->
+
+<div class="section features-1">
+  <div class="container">
+    <div class="col-md-8 mx-auto text-center">
+      <span class="badge badge-primary badge-pill mb-3">Insight</span>
+      <h3 class="display-3 sub-title">Our Courses</h3>
+      <p class="lead">The time is now for it to be okay to be great. For being a bright color. For standing out.</p>
+    </div>
+    <div class="card-deck">
+      <ng-container *ngFor="let course of courses; index as i; count as len">
+        <div class="card">
+          <img [alt]="course.course_name" [src]="course.course_img" class="card-img-top"/>
+          <div class="card-body">
+            <h5 class="card-title">{{course.course_name}}</h5>
+            <p class="card-text">{{course.course_desc}}</p>
+          </div>
+          <div class="card-footer">
+            <p class="card-text d-inline">Price: <small>
+              <del>MAD {{course.course_original_price}}</del>
+            </small> <span class="font-weight-bolder">MAD {{course.course_price}}</span></p>
+            <a class="btn btn-primary text-white font-weight-bolder float-right"
+               href="coursedetails.php?course_id='.$course_id.'">Enroll</a>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</div><!-- End All Course -->
+
