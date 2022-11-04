@@ -16,6 +16,15 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { CoursesIndexComponent } from './pages/course/courses-index/courses-index.component';
 import { CoursesShowComponent } from './pages/course/courses-show/courses-show.component';
 import {JwtInterceptor} from './helpers/jwt.interceptor';
+import { InstructorIndexComponent } from './pages/instructor/instructor-index/instructor-index.component';
+import { InstructorEditComponent } from './pages/instructor/instructor-edit/instructor-edit.component';
+import { InstructorShowComponent } from './pages/instructor/instructor-show/instructor-show.component';
+import { StudentIndexComponent } from './pages/student/student-index/student-index.component';
+import { StudentEditComponent } from './pages/student/student-edit/student-edit.component';
+import { StudentShowComponent } from './pages/student/student-show/student-show.component';
+import { AdminStudentIndexComponent } from './pages/admin/student/admin-student-index/admin-student-index.component';
+import { AdminInstructorIndexComponent } from './pages/admin/instructor/admin-instructor-index/admin-instructor-index.component';
+import { AdminCoursesIndexComponent } from './pages/admin/course/admin-courses-index/admin-courses-index.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +36,15 @@ import {JwtInterceptor} from './helpers/jwt.interceptor';
     HomeComponent,
     CoursesIndexComponent,
     CoursesShowComponent,
+    InstructorIndexComponent,
+    InstructorEditComponent,
+    InstructorShowComponent,
+    StudentIndexComponent,
+    StudentEditComponent,
+    StudentShowComponent,
+    AdminStudentIndexComponent,
+    AdminInstructorIndexComponent,
+    AdminCoursesIndexComponent,
   ],
   imports: [
     BrowserModule,
