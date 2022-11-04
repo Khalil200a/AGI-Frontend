@@ -26,22 +26,29 @@ export class AuthService {
     return this.http
       .post<any>(`${this.endpoint}/auth/signin`, user)
       .subscribe((res: any) => {
-        localStorage.setItem('access_token', res.token);
-        this.getUserProfile(res._id).subscribe((res) => {
+        localStorage.setItem('accessToken', res.accessToken);
+        localStorage.setItem('username', res.username);
+        localStorage.setItem('role', res.roles[0]);
+        this.getUserProfile(res.id).subscribe((res) => {
           this.currentUser = res;
-          this.router.navigate(['user-profile/' + res.msg._id]);
+          if(res.role[0] =="ROLE_INSTRUCTOR"){
+            this.router.navigate(['instructor']);
+          }else if(res.role[0]=="ROLE_STUDENT"){
+            this.router.navigate(['student'])
+          }
         });
       });
   }
   getToken() {
-    return localStorage.getItem('access_token');
+    return localStorage.getItem('accessToken');
   }
   get isLoggedIn(): boolean {
-    let authToken = localStorage.getItem('access_token');
-    return authToken !== null ? true : false;
+    let authToken = localStorage.getItem('accessToken');
+    return authToken != null;
+
   }
   doLogout() {
-    let removeToken = localStorage.removeItem('access_token');
+    let removeToken = localStorage.removeItem('accessToken');
     if (removeToken == null) {
       this.router.navigate(['signin']);
     }
