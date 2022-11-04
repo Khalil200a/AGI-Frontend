@@ -1,30 +1,51 @@
 <nav class="navbar navbar-expand-sm navbar-dark pl-5 fixed-top">
-  <a routerLink="/home" class="navbar-brand">E-learning</a>
+  <a class="navbar-brand" routerLink="/home">E-learning</a>
   <span class="navbar-text">Learn and Implement</span>
-  <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#myMenu">
+  <button class="navbar-toggler" data-target="#myMenu" data-toggle="collapse" type="button">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="myMenu">
     <ul class="navbar-nav pl-5 custom-nav ml-auto">
-      <li class="nav-item custom-nav-item"><a href="index.php" class="nav-link">Home</a></li>
-      <li class="nav-item custom-nav-item"><a href="courses.php" class="nav-link">Courses</a></li>
-      <li class="nav-item custom-nav-item"><a href="paymentstatus.php" class="nav-link">Payment Status</a></li>
-      <li class="nav-item custom-nav-item"><a href="#Feedback" class="nav-link">Feedback</a></li>
-      <li class="nav-item custom-nav-item"><a href="#Contact" class="nav-link">Contact</a></li>
-      <li class="nav-item mt-2">
-        <a class="btn btn-outline-primary" routerLink="/signin">
-          <span class="nav-link-inner--text">Sign In</span>
-        </a>
-      </li>
-      <li class="nav-item d-none d-lg-block mt-2">
-        <a href="https://www.creative-tim.com/product/argon-design-system-pro?ref=ads-upgrade-pro" target="_blank"
-           class="btn btn-primary btn-icon">
+      <li class="nav-item custom-nav-item"><a class="nav-link" routerLink="/home">Home</a></li>
+      <li class="nav-item custom-nav-item"><a class="nav-link" routerLink="/courses">Courses</a></li>
+      <ng-container *ngIf="role=='ROLE_INSTRUCTOR'">
+        <li class="nav-item custom-nav-item"><a class="nav-link" routerLink="/instructor">My Work</a></li>
+      </ng-container>
+      <ng-container *ngIf="role=='ROLE_STUDENT'">
+        <li class="nav-item custom-nav-item"><a class="nav-link" routerLink="/student">My Courses</a></li>
+      </ng-container>
+      <ng-container *ngIf="role=='ROLE_ADMIN'">
+        <li class="nav-item custom-nav-item"><a class="nav-link" routerLink="/admin/student">Our Students</a></li>
+        <li class="nav-item custom-nav-item"><a class="nav-link" routerLink="/admin/instructor">Our Instructors</a></li>
+        <li class="nav-item custom-nav-item"><a class="nav-link" routerLink="/admin/course">Our Courses</a></li>
+      </ng-container>
+      <li class="nav-item custom-nav-item"><a class="nav-link" href="#Feedback">Feedback</a></li>
+      <li class="nav-item custom-nav-item"><a class="nav-link" href="#Contact">Contact</a></li>
+      <ng-container *ngIf="!isLoggedIn">
+        <li class="nav-item mt-2">
+          <a class="btn btn-outline-primary" routerLink="/signin">
+            <span class="nav-link-inner--text">Sign In</span>
+          </a>
+        </li>
+        <li class="nav-item d-none d-lg-block mt-2">
+          <a class="btn btn-primary btn-icon"
+             routerLink="/signup">
               <span class="btn-inner--icon">
               </span>
-          <span class="nav-link-inner--text">Sign Up</span>
-        </a>
-      </li>
-
+            <span class="nav-link-inner--text">Sign Up</span>
+          </a>
+        </li>
+      </ng-container>
+      <ng-container *ngIf="isLoggedIn" >
+        <li class="nav-item d-none d-lg-block mt-2">
+          <a class="btn btn-danger btn-icon"
+          (click)="onSignOut()">
+              <span class="btn-inner--icon">
+              </span>
+            <span class="nav-link-inner--text">Sign Out</span>
+          </a>
+        </li>
+      </ng-container>
     </ul>
   </div>
 </nav>
