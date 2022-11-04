@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Course} from "../../../models/course.model";
 import {CourseService} from "../../../services/course.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-courses-index',
@@ -10,13 +11,21 @@ import {CourseService} from "../../../services/course.service";
 export class CoursesIndexComponent implements OnInit {
 
   courses: Course[];
+  numbers: number[];
+  firstIndex: number = 0;
 
-  constructor(private courseService: CourseService) { }
+  constructor(private courseService: CourseService, private router: Router) {
+    this.numbers = [0, 1, 2, 3];
+  }
 
   ngOnInit(): void {
     this.courseService.getCourses().subscribe((res:Course[])=>{
       this.courses = res;
     });
+  }
+
+  onClickCourse(id){
+    this.router.navigateByUrl('courses/'+id)
   }
 
 }
