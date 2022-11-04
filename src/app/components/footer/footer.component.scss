@@ -1,11 +1,11 @@
 @import "src/style";
 footer .main-footer {
   padding: 55px 0;
-  background-color: $navbar-color;
+  background-color: $footer-color;
 }
 
 .typo-light h1, .typo-light h2, .typo-light h3, .typo-light h4, .typo-light h5, .typo-light h6, .typo-light p, .typo-light div, .typo-light span, .typo-light small {
-  color: $paragraph-color;
+  color: #0a0c0d;
 }
 
 .footer-copyright {
@@ -24,7 +24,7 @@ p {
 }
 
 a {
-  color: $paragraph-color;
+  color: #0a0c0d;
   text-decoration: none;
 }
 
