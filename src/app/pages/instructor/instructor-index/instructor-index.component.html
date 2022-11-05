@@ -1,0 +1,53 @@
+<div class="container-fluid bg-dark"> <!-- Start Course Page Banner -->
+  <div class="row">
+    <img alt="courses" src="assets/images/coursebanner.jpg" style=""/>
+  </div>
+</div> <!-- End Course Page Banner -->
+
+<div class="section features-1">
+  <div class="container">
+    <main class="pb-3" role="main">
+      <h1>Hello : <span>{{instructor}}</span></h1>
+
+
+      <p>New Billet? Click
+        <!--      <a th:href="@{/billets/create}">here</a> to Add it.</p>-->
+
+      <table class="table">
+        <thead>
+        <tr>
+          <th>
+            Name
+          </th>
+          <th>
+            Price
+          </th>
+          <th>
+            Duration
+          </th>
+          <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let course of courses">
+                <td class="mt-auto">
+                  {{course.course_name}}
+                </td>
+                <td>
+                  {{course.course_price}}
+                </td>
+                <td>
+                  {{course.course_duration}}
+                </td>
+                <td>
+                  <a class="btn btn-warning mt-auto" (click)="onClickEdit(course.course_id)">Edit</a>
+                  <a class="btn btn-primary mt-auto" (click)="onClickDetail(course.course_id)">Details</a>
+                  <a class="btn btn-danger mt-auto" (click)="onClickDetail(course.course_id)">Delete</a>
+<!--                  <a th:href="@{'/billets/delete/' + ${billet.id}}">Delete</a>-->
+                </td>
+              </tr>
+        </tbody>
+      </table>
+    </main>
+  </div>
+</div>
