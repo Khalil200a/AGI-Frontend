@@ -1,0 +1,42 @@
+<div class="container-fluid bg-dark"> <!-- Start Course Page Banner -->
+  <div class="row">
+    <img alt="courses" src="../../assets/images/coursebanner.jpg" style=""/>
+  </div>
+</div> <!-- End Course Page Banner -->
+
+<div class="section features-1">
+  <div class="container">
+    <main class="pb-3" role="main">
+      <h1>Welcome back : <span>{{admin}}</span></h1>
+      <table class="table">
+        <thead>
+        <tr>
+          <th>
+            Name
+          </th>
+          <th>
+            Email
+          </th>
+          <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let instructor of instructors">
+          <td class="mt-auto">
+            {{instructor.username}}
+          </td>
+          <td>
+            {{instructor.email}}
+          </td>
+          <td>
+            <a class="btn btn-primary mt-auto">Details</a>
+            <a class="btn btn-danger mt-auto">Delete</a>
+            <!--                  <a th:href="@{'/billets/delete/' + ${billet.id}}">Delete</a>-->
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </main>
+  </div>
+</div>
+
