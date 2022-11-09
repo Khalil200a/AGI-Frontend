@@ -15,6 +15,13 @@ import {
   AdminInstructorIndexComponent
 } from "./pages/admin/instructor/admin-instructor-index/admin-instructor-index.component";
 import {AdminCoursesIndexComponent} from "./pages/admin/course/admin-courses-index/admin-courses-index.component";
+import {InstructorCreateComponent} from "./pages/instructor/instructor-create/instructor-create.component";
+import {InstructorShowComponent} from "./pages/instructor/instructor-show/instructor-show.component";
+import {LessonCreateComponent} from "./pages/instructor/lesson/lesson-create/lesson-create.component";
+import {LessonEditComponent} from "./pages/instructor/lesson/lesson-edit/lesson-edit.component";
+import {LessonShowComponent} from "./pages/instructor/lesson/lesson-show/lesson-show.component";
+import {LessonIndexComponent} from "./pages/instructor/lesson/lesson-index/lesson-index.component";
+import {StudentShowComponent} from "./pages/student/student-show/student-show.component";
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -29,12 +36,23 @@ const routes: Routes = [
   {path:'instructor',
     children:[
       {path:'', component: InstructorIndexComponent, canActivate: [AuthGuard]},
+      {path:'create', component: InstructorCreateComponent, canActivate: [AuthGuard]},
+      {path:':id', component: InstructorShowComponent, canActivate: [AuthGuard]},
       {path:'edit/:id', component: InstructorEditComponent, canActivate: [AuthGuard]},
+      {path:'lesson',
+        children:[
+          {path:':id', component:LessonIndexComponent, canActivate:[AuthGuard]},
+          {path:'create/:id', component: LessonCreateComponent, canActivate: [AuthGuard]},
+          {path:'edit/:id', component: LessonEditComponent, canActivate: [AuthGuard]},
+          {path:'detail/:id', component: LessonShowComponent, canActivate: [AuthGuard]}
+        ]
+      }
     ]
   },
   {path:'student',
     children:[
       {path:'', component: StudentIndexComponent, canActivate: [AuthGuard]},
+      {path:':id', component: StudentShowComponent, canActivate: [AuthGuard]},
       {path:'edit/:id', component: StudentEditComponent, canActivate: [AuthGuard]},
     ]
   },
