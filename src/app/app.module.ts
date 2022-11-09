@@ -29,6 +29,10 @@ import { AdminCoursesIndexComponent } from './pages/admin/course/admin-courses-i
 import { InstructorCreateComponent } from './pages/instructor/instructor-create/instructor-create.component';
 import {MessageService} from "primeng/api";
 import {ToastModule} from "primeng/toast";
+import { LessonEditComponent } from './pages/instructor/lesson/lesson-edit/lesson-edit.component';
+import { LessonShowComponent } from './pages/instructor/lesson/lesson-show/lesson-show.component';
+import { LessonCreateComponent } from './pages/instructor/lesson/lesson-create/lesson-create.component';
+import { LessonIndexComponent } from './pages/instructor/lesson/lesson-index/lesson-index.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +54,10 @@ import {ToastModule} from "primeng/toast";
     AdminInstructorIndexComponent,
     AdminCoursesIndexComponent,
     InstructorCreateComponent,
+    LessonEditComponent,
+    LessonShowComponent,
+    LessonCreateComponent,
+    LessonIndexComponent,
   ],
   imports: [
     BrowserModule,
