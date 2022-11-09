@@ -1,0 +1,61 @@
+<br>
+<div class="section features-1">
+  <div class="container mt-5"> <!-- Start All Course -->
+    <div class="row">
+      <div class="col-md-4">
+        <img [alt]="course.course_name" class="card-img-top" src="../{{course.course_img}}"/>
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">Course Name: {{course.course_name}}</h5>
+          <p class="card-text"> Description: {{course.course_desc}}</p>
+          <p class="card-text"> Duration: {{course.course_duration}}</p>
+          <form  method="post">
+            <p class="card-text d-inline">Price:
+              <small>
+                <del>
+                  <strong>MAD</strong> {{course.course_original_price}}
+                </del>
+              </small>
+              <span class="font-weight-bolder">
+              <strong>MAD</strong> {{course.course_price}}
+            </span>
+            </p>
+            <input [value]="course.course_price" name="id" type="hidden">
+            <button (click)="onUpdate(course)" class="btn btn-primary text-white font-weight-bolder float-right" name="buy"
+                    type="submit">Update Course
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <p>New Lesson? Click
+    <a href="javascript: void(0)" (click)="onAddLesson()">here</a> to Add it.</p>
+    <div class="row">
+      <table class="table table-bordered table-hover">
+        <thead>
+        <tr>
+          <th scope="col">Lesson No.</th>
+          <th scope="col">Lesson Name</th>
+          <th scope="colgroup"></th>
+        </tr>
+        </thead>
+        <tbody>
+        <ng-container *ngFor="let lesson of course.course_lessons">
+          <tr>
+            <th scope="row">{{lesson.lesson_id}}</th>
+            <td>{{lesson.lesson_name}}</td>
+            <td>
+              <a class="btn btn-warning mt-auto" (click)="onClickEdit(lesson.lesson_id)">Edit</a>
+              <a class="btn btn-primary mt-auto" (click)="onClickDetail(lesson.lesson_id)">Details</a>
+              <a class="btn btn-danger mt-auto" (click)="onDelete(lesson.lesson_id)">Delete</a>
+            </td>
+          </tr>
+        </ng-container>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
