@@ -3,6 +3,7 @@ import {Course} from "../../../models/course.model";
 import {CourseService} from "../../../services/course.service";
 import {AuthService} from "../../../services/auth.service";
 import {ActivatedRoute, Router} from "@angular/router";
+import {MessageService} from "primeng/api";
 
 @Component({
   selector: 'app-student-index',
@@ -14,7 +15,7 @@ export class StudentIndexComponent implements OnInit {
   courses : Course[];
   student: String;
 
-  constructor(private courseService: CourseService, private authService: AuthService, private route: ActivatedRoute, private router: Router) { }
+  constructor(private courseService: CourseService, private messageService: MessageService, private authService: AuthService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
     this.student = localStorage.getItem('username');
@@ -24,6 +25,13 @@ export class StudentIndexComponent implements OnInit {
   }
 
   onClickDetail(id){
-    this.router.navigateByUrl('courses/'+id)
+    this.router.navigateByUrl('student/'+id)
+  }
+
+  onDelete(id) {
+    this.courseService.deleteCourseByStudent(id).subscribe((res)=>{
+      this.messageService.add({severity: "success", detail: "Course", summary: `${res["message"]}`});
+      this.router.navigate(['student']);
+    })
   }
 }
