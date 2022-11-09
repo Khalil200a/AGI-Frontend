@@ -1,0 +1,78 @@
+<br>
+<div class="section features-1">
+  <div class="container">
+    <main role="main" class="pb-3">
+      <h1>Edit</h1>
+
+      <h4>Course</h4>
+      <hr/>
+      <div class="row">
+        <div class="col-md-4">
+          <form
+            (ngSubmit)="editCourse()"
+            [formGroup]="courseFrom"
+            class="form-signin"
+          >
+            <div class="form-group">
+              <label>Name</label>
+              <input
+                class="form-control"
+                formControlName="course_name"
+                placeholder="Enter name"
+                required
+                type="text"
+              />
+            <br>
+            </div>
+            <div class="form-group">
+              <label>Description</label>
+              <textarea
+                class="form-control"
+                formControlName="course_desc"
+                placeholder="Enter description"
+                required>
+              </textarea>
+              <br>
+            </div>
+            <div class="form-group">
+              <label>Duration</label>
+              <input
+                class="form-control"
+                formControlName="course_duration"
+                placeholder="Enter duration"
+                required
+                type="text"
+              />
+              <br>
+            </div>
+            <div class="form-group">
+              <label>Price</label>
+              <input
+                class="form-control"
+                formControlName="course_price"
+                placeholder="Enter duration"
+                required
+                type="text"
+              />
+              <br>
+            </div>
+            <div class="form-group">
+              <label>Original Price</label>
+              <input
+                class="form-control"
+                formControlName="course_original_price"
+                placeholder="Enter duration"
+                required
+                type="text"
+              />
+              <br>
+            </div>
+            <div class="form-group">
+              <input type="submit" value="Ajouter Billet" class="btn btn-primary"/>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
