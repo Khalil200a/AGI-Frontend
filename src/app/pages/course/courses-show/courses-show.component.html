@@ -1,14 +1,9 @@
-<div class="container-fluid bg-dark"> <!-- Start Course Page Banner -->
-  <div class="row">
-    <img alt="courses" src="../assets/images/coursebanner.jpg" style=""/>
-  </div>
-</div> <!-- End Course Page Banner -->
-
+<br>
 <div class="section features-1">
   <div class="container mt-5"> <!-- Start All Course -->
     <div class="row">
       <div class="col-md-4">
-        <img [alt]="course.course_name" src = "../{{course.course_img}}" class="card-img-top"/>
+        <img [alt]="course.course_name" class="card-img-top" src="../{{course.course_img}}"/>
       </div>
       <div class="col-md-8">
         <div class="card-body">
@@ -27,39 +22,32 @@
             </span>
             </p>
             <input [value]="course.course_price" name="id" type="hidden">
-            <button class="btn btn-primary text-white font-weight-bolder float-right" name="buy" (click)="onBuy(course)" type="submit">Buy Now
+            <button (click)="onBuy(course)" class="btn btn-primary text-white font-weight-bolder float-right" name="buy"
+                    type="submit">Buy Now
             </button>
           </form>
         </div>
       </div>
-    </div><!-- End All Course -->
-    <!--  <div class="container">-->
-    <!--    <div class="row">-->
-    <!--      <?php $sql = "SELECT * FROM lesson";-->
-    <!--                $result = $conn->query($sql);-->
-    <!--      if($result->num_rows > 0){-->
-    <!--      echo '-->
-    <!--       <table class="table table-bordered table-hover">-->
-    <!--         <thead>-->
-    <!--           <tr>-->
-    <!--             <th scope="col">Lesson No.</th>-->
-    <!--             <th scope="col">Lesson Name</th>-->
-    <!--           </tr>-->
-    <!--         </thead>-->
-    <!--         <tbody>';-->
-    <!--         $num = 0;-->
-    <!--         while($row = $result->fetch_assoc()){-->
-    <!--      if($row['course_id'] == $course_id) {-->
-    <!--      $num++;-->
-    <!--     echo ' <tr>-->
-    <!--      <th scope="row">'.$num.'</th>-->
-    <!--      <td>'. $row["lesson_name"].'</td></tr>';-->
-    <!--      }-->
-    <!--      }-->
-    <!--      echo '</tbody>-->
-    <!--    </table>';-->
-    <!--      } ?>-->
-    <!--    </div>-->
-    <!--  </div>-->
+    </div>
+    <div class="container">
+      <div class="row">
+        <table class="table table-bordered table-hover">
+          <thead>
+          <tr>
+            <th scope="col">Lesson No.</th>
+            <th scope="col">Lesson Name</th>
+          </tr>
+          </thead>
+          <tbody>
+          <ng-container *ngFor="let lesson of course.course_lessons">
+          <tr>
+            <th scope="row">{{lesson.lesson_id}}</th>
+            <td>{{lesson.lesson_name}}</td>
+          </tr>
+          </ng-container>
+          </tbody>
+        </table>
+      </div>
+    </div>
   </div>
 </div>
