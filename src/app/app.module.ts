@@ -5,6 +5,7 @@ import {MatIconModule} from "@angular/material/icon";
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
+import {MessagesModule} from 'primeng/messages';
 import { FooterComponent } from './components/footer/footer.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SigninComponent } from './pages/signin/signin.component';
@@ -25,6 +26,9 @@ import { StudentShowComponent } from './pages/student/student-show/student-show.
 import { AdminStudentIndexComponent } from './pages/admin/student/admin-student-index/admin-student-index.component';
 import { AdminInstructorIndexComponent } from './pages/admin/instructor/admin-instructor-index/admin-instructor-index.component';
 import { AdminCoursesIndexComponent } from './pages/admin/course/admin-courses-index/admin-courses-index.component';
+import { InstructorCreateComponent } from './pages/instructor/instructor-create/instructor-create.component';
+import {MessageService} from "primeng/api";
+import {ToastModule} from "primeng/toast";
 
 @NgModule({
   declarations: [
@@ -45,6 +49,7 @@ import { AdminCoursesIndexComponent } from './pages/admin/course/admin-courses-i
     AdminStudentIndexComponent,
     AdminInstructorIndexComponent,
     AdminCoursesIndexComponent,
+    InstructorCreateComponent,
   ],
   imports: [
     BrowserModule,
@@ -55,14 +60,17 @@ import { AdminCoursesIndexComponent } from './pages/admin/course/admin-courses-i
     MatIconModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MessagesModule,
+    ToastModule
   ],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
       useClass: JwtInterceptor,
-      multi: true
-    }
+      multi: true,
+    },
+    MessageService
   ],
   bootstrap: [AppComponent]
 })
