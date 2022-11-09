@@ -97,15 +97,21 @@ Coded by www.creative-tim.com
 </script>
 <script>
   $(document).ready(function () {
+    $(".navbar").css("background-color", "#225470");
     // Change Navbar Color on Scroll
     // $(window).scrollTop() returns the position of the top of the page
-    $(window).scroll(function () {
-      if ($(window).scrollTop() >= 600) {
-        $(".navbar").css("background-color", "#225470");
-      } else {
-        $(".navbar").css("background-color", "transparent");
-      }
-    });
+    // $(window).scroll(function () {
+    //
+    //   // if ($(window).location.pathname==="/home"){
+    //     if ($(window).scrollTop() >= 600) {
+    //       $(".navbar").css("background-color", "#225470");
+    //     } else {
+    //         $(".navbar").css("background-color", "#225470");
+    //     }
+    // //   else {
+    // //     $(".navbar").css("background-color", "#225470");
+    // //   }}
+    //  });
   })
 </script>
 <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
