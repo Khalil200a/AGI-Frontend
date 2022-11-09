@@ -47,6 +47,14 @@
                   />
                 </div>
                 <div class="form-group">
+                  <label>Role</label>
+                  <select class="form-control" formControlName ="role" name="role">
+                    <option *ngFor="let op of roles" [value]="op">
+                      {{op}}
+                    </option>
+                  </select>
+                </div>
+                <div class="form-group">
                   <label>Email address</label>
                   <input
                     class="form-control"
