@@ -3,6 +3,7 @@ import {HttpClient} from "@angular/common/http";
 import {map} from "rxjs";
 import {Course} from "../models/course.model";
 import {environment} from "../../environments/environment";
+import * as http from "http";
 
 @Injectable({
   providedIn: 'root'
@@ -19,6 +20,14 @@ export class CourseService {
     return this.http.get<Course[]>(`${environment.apiUrl}/courses`).pipe(map((res) => {
       return res;
     }));
+  }
+
+  updateCourse(course:Course, id){
+    return this.http.put(`${environment.apiUrl}/courses/${id}`, course);
+  }
+
+  setCourse(course:Course){
+    return this.http.post(`${environment.apiUrl}/courses`, course);
   }
 
   //Get Course by Id
@@ -42,5 +51,17 @@ export class CourseService {
 
   addCourseToStudent(course: Course){
     return this.http.post(`${environment.apiUrl}/courses/student/${course.course_id}`, course)
+  }
+
+  deleteCourse(id){
+    return this.http.delete(`${environment.apiUrl}/courses/${id}`).pipe(map((res) =>{
+      return res;
+    }));
+  }
+
+  deleteCourseByStudent(id){
+    return this.http.delete(`${environment.apiUrl}/courses/student/${id}`).pipe(map((res) =>{
+      return res;
+    }));
   }
 }
