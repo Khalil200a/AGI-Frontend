@@ -1,8 +1,4 @@
-<div class="container-fluid bg-dark"> <!-- Start Course Page Banner -->
-  <div class="row">
-    <img alt="courses" src="../../assets/images/coursebanner.jpg" style=""/>
-  </div>
-</div> <!-- End Course Page Banner -->
+<br>
 
 <div class="section features-1">
   <div class="container">
@@ -29,8 +25,8 @@
             {{student.email}}
           </td>
           <td>
-            <a class="btn btn-primary mt-auto">Details</a>
-            <a class="btn btn-danger mt-auto">Delete</a>
+            <a class="btn btn-primary mt-auto" (click)="onClickDetail(student.id)">Details</a>
+            <a class="btn btn-danger mt-auto" (click) = "onClickDelete(student.id)">Delete</a>
           </td>
         </tr>
         </tbody>
