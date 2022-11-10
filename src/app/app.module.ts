@@ -8,8 +8,8 @@ import { AppComponent } from './app.component';
 import {MessagesModule} from 'primeng/messages';
 import { FooterComponent } from './components/footer/footer.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { SigninComponent } from './pages/signin/signin.component';
-import { SignupComponent } from './pages/signup/signup.component';
+import { SigninComponent } from './pages/user/signin/signin.component';
+import { SignupComponent } from './pages/user/signup/signup.component';
 import { HomeComponent } from './pages/home/home.component';
 import {RouterOutlet} from "@angular/router";
 import { AppRoutingModule } from './app-routing.module';
@@ -33,6 +33,7 @@ import { LessonEditComponent } from './pages/instructor/lesson/lesson-edit/lesso
 import { LessonShowComponent } from './pages/instructor/lesson/lesson-show/lesson-show.component';
 import { LessonCreateComponent } from './pages/instructor/lesson/lesson-create/lesson-create.component';
 import { LessonIndexComponent } from './pages/instructor/lesson/lesson-index/lesson-index.component';
+import { ProfileComponent } from './pages/user/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -58,6 +59,7 @@ import { LessonIndexComponent } from './pages/instructor/lesson/lesson-index/les
     LessonShowComponent,
     LessonCreateComponent,
     LessonIndexComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,
