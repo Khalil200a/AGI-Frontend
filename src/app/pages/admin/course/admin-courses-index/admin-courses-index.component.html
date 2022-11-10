@@ -1,9 +1,4 @@
-<div class="container-fluid bg-dark"> <!-- Start Course Page Banner -->
-  <div class="row">
-    <img alt="courses" src="../../assets/images/coursebanner.jpg" style=""/>
-  </div>
-</div> <!-- End Course Page Banner -->
-
+<br>
 <div class="section features-1">
   <div class="container">
     <main class="pb-3" role="main">
@@ -34,14 +29,14 @@
             {{course.course_name}}
           </td>
           <td>
-            Khalil200a
+            khalilinstructor
           </td>
           <td>
             {{course.course_duration}}
           </td>
           <td>
             <a class="btn btn-primary mt-auto" (click)="onClickDetail(course.course_id)">Details</a>
-            <a class="btn btn-danger mt-auto" (click)="onClickDetail(course.course_id)">Delete</a>
+            <a class="btn btn-danger mt-auto" (click)="onDelete(course.course_id)">Delete</a>
             <!--                  <a th:href="@{'/billets/delete/' + ${billet.id}}">Delete</a>-->
           </td>
         </tr>

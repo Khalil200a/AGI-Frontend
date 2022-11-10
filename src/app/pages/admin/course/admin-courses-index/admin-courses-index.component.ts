@@ -3,6 +3,7 @@ import {Course} from "../../../../models/course.model";
 import {CourseService} from "../../../../services/course.service";
 import {AuthService} from "../../../../services/auth.service";
 import {ActivatedRoute, Router} from "@angular/router";
+import {MessageService} from "primeng/api";
 
 @Component({
   selector: 'app-admin-courses-index',
@@ -13,7 +14,7 @@ export class AdminCoursesIndexComponent implements OnInit {
   courses : Course[];
   student: String;
 
-  constructor(private courseService: CourseService, private authService: AuthService, private route: ActivatedRoute, private router: Router) { }
+  constructor(private courseService: CourseService, private messageResponse: MessageService, private authService: AuthService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
     this.student = localStorage.getItem('username');
@@ -23,6 +24,18 @@ export class AdminCoursesIndexComponent implements OnInit {
   }
 
   onClickDetail(id){
-    this.router.navigateByUrl('courses/'+id)
+    this.router.navigateByUrl('instructor/'+id);
+  }
+
+  onDelete(id) {
+    this.courseService.deleteCourse(id).subscribe((res)=>{
+      if (res['message'].contains("not")==7){
+        this.messageResponse.add({severity: 'error', summary:'Course', detail: `${res['message']}`})
+      }
+      else {
+        this.messageResponse.add({severity:'success', summary:'Course', detail: `${res['message']}`});
+      }
+      this.router.navigate(['courses']);
+    });
   }
 }
