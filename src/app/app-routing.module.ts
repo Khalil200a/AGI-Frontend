@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {HomeComponent} from "./pages/home/home.component";
-import {SigninComponent} from "./pages/signin/signin.component";
-import {SignupComponent} from "./pages/signup/signup.component";
+import {SigninComponent} from "./pages/user/signin/signin.component";
+import {SignupComponent} from "./pages/user/signup/signup.component";
 import {CoursesIndexComponent} from "./pages/course/courses-index/courses-index.component";
 import { AuthGuard } from "./helpers/auth.guard";
 import {CoursesShowComponent} from "./pages/course/courses-show/courses-show.component";
@@ -22,15 +22,17 @@ import {LessonEditComponent} from "./pages/instructor/lesson/lesson-edit/lesson-
 import {LessonShowComponent} from "./pages/instructor/lesson/lesson-show/lesson-show.component";
 import {LessonIndexComponent} from "./pages/instructor/lesson/lesson-index/lesson-index.component";
 import {StudentShowComponent} from "./pages/student/student-show/student-show.component";
+import {ProfileComponent} from "./pages/user/profile/profile.component";
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'signin', component: SigninComponent },
   { path: 'signup', component: SignupComponent },
+  { path: 'profile/:id', component: ProfileComponent },
   { path: 'courses',
     children:[
-      {path:'', component: CoursesIndexComponent, canActivate: [AuthGuard]},
-      {path:':id', component:CoursesShowComponent, canActivate: [AuthGuard]}
+      {path:'', component: CoursesIndexComponent},
+      {path:':id', component:CoursesShowComponent}
     ]
   },
   {path:'instructor',
