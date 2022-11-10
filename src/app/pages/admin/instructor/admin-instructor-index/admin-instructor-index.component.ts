@@ -3,6 +3,7 @@ import {User} from "../../../../models/user.model";
 import {UserService} from "../../../../services/user.service";
 import {AuthService} from "../../../../services/auth.service";
 import {ActivatedRoute, Router} from "@angular/router";
+import {MessageService} from "primeng/api";
 
 @Component({
   selector: 'app-admin-instructor-index',
@@ -13,7 +14,7 @@ export class AdminInstructorIndexComponent implements OnInit {
   instructors : User[];
   admin: String;
 
-  constructor(private userService: UserService, private authService: AuthService, private route: ActivatedRoute, private router: Router) { }
+  constructor(private userService: UserService, private messageService: MessageService, private authService: AuthService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
     this.admin = localStorage.getItem('username');
@@ -21,8 +22,14 @@ export class AdminInstructorIndexComponent implements OnInit {
       this.instructors = res;
     });
   }
-  //
-  // onClickDetail(id){
-  //   this.router.navigateByUrl('courses/'+id)
-  // }
+
+  onClickDetail(id){
+    this.router.navigate(['profile', id])
+  }
+
+  onClickDelete(id: number){
+    this.userService.deleteUser(id).subscribe((res) =>{
+      this.messageService.add({severity:"success", summary: "Student", detail: "Instructor has been deleted"})
+    })
+  }
 }
