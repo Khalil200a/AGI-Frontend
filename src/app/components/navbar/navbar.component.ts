@@ -10,7 +10,7 @@ import {Router} from "@angular/router";
 export class NavbarComponent implements OnInit {
   stickyClass: boolean = false;
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private router: Router) { }
 
   role:string;
 
@@ -35,4 +35,7 @@ export class NavbarComponent implements OnInit {
     this.authService.doLogout();
   }
 
+  onProfile() {
+    this.router.navigate(['profile', localStorage.getItem('id')])
+  }
 }
