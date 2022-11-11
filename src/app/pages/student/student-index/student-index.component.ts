@@ -30,8 +30,8 @@ export class StudentIndexComponent implements OnInit {
 
   onDelete(id) {
     this.courseService.deleteCourseByStudent(id).subscribe((res)=>{
-      this.messageService.add({severity: "success", detail: "Course", summary: `${res["message"]}`});
-      this.router.navigate(['student']);
+      this.messageService.add({severity: "success", summary: "Course", detail: `${res["message"]}`});
+      this.router.navigate(['courses']);
     })
   }
 }

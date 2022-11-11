@@ -19,7 +19,9 @@ export class AuthService {
   // Sign-up
   signUp(user: User): Observable<any> {
     let api = `${this.endpoint}/auth/signup`;
-    return this.http.post(api, user).pipe(catchError(this.handleError));
+    return this.http.post(api, user).pipe(map((res:any) =>{
+      return res;
+    }));
   }
   // Sign-in
   signIn(user: User) {
@@ -28,6 +30,7 @@ export class AuthService {
       .subscribe((res: any) => {
         localStorage.setItem('accessToken', res.accessToken);
         localStorage.setItem('username', res.username);
+        localStorage.setItem('id', res.id);
         localStorage.setItem('role', res.roles[0]);
         this.getUserProfile(res.id).subscribe((res) => {
           this.currentUser = res;

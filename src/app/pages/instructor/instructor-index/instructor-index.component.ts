@@ -34,14 +34,6 @@ export class InstructorIndexComponent implements OnInit {
   }
 
   onDelete(id) {
-    this.courseService.deleteCourse(id).subscribe((res)=>{
-      if (res['message'].indexOf('n')==7){
-        this.messageResponse.add({severity: 'error', summary:'Course', detail: `${res['message']}`})
-      }
-      else {
-        this.messageResponse.add({severity:'success', summary:'Course', detail: `${res['message']}`});
-      }
-      this.router.navigate(['courses']);
-    });
+    this.messageResponse.add({severity: 'error', summary:'Course', detail: 'this course is enrolled by student'})
   }
 }

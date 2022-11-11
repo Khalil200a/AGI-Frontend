@@ -3,4 +3,5 @@ export class Lesson {
   lesson_name: string;
   lesson_desc: string;
   lesson_url: string;
+  course_id: number;
 }

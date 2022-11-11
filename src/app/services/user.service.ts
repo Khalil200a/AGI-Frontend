@@ -22,4 +22,16 @@ export class UserService {
       return res;
     }))
   }
+
+  getUser(id){
+    return this.http.get<User>(`${environment.apiUrl}/user/${id}`).pipe(map((res)=>{
+      return res;
+    }))
+  }
+
+  deleteUser(id){
+    return this.http.delete(`${environment.apiUrl}/user/${id}`).pipe(map((res:any)=>{
+      return res;
+    }))
+  }
 }

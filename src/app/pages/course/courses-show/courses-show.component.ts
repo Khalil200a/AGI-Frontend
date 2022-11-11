@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {Course} from "../../../models/course.model";
 import {CourseService} from "../../../services/course.service";
 import {ActivatedRoute, Router} from "@angular/router";
+import {AuthService} from "../../../services/auth.service";
+import {MessageService} from "primeng/api";
 
 @Component({
   selector: 'app-courses-show',
@@ -14,7 +16,7 @@ export class CoursesShowComponent implements OnInit {
 
   id: number;
 
-  constructor(private courseService: CourseService,private router: Router, private route: ActivatedRoute) { }
+  constructor(private courseService: CourseService,private router: Router, private messageService: MessageService, private route: ActivatedRoute, private authService: AuthService) { }
 
   ngOnInit(): void {
     this.courseService.getCourse(this.route.snapshot.params['id']).subscribe((res: Course)=>{
@@ -23,9 +25,17 @@ export class CoursesShowComponent implements OnInit {
   }
 
   onBuy(course: Course){
-    return this.courseService.addCourseToStudent(course).subscribe((res) =>{
-      this.router.navigate(['home']);
-    });
+    if (this.authService.isLoggedIn){
+      return this.courseService.addCourseToStudent(course).subscribe((res) =>{
+        this.messageService.add({severity:'success',summary:"Course",detail:"This course Has been enrolled"})
+        this.router.navigate(['student']);
+      });
+    }
+    else {
+      this.messageService.add({severity:'error',summary:"Log In",detail:"You Should Log In First"})
+      return null;
+    }
+
   }
 
 

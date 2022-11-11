@@ -34,8 +34,8 @@ export class LessonEditComponent implements OnInit {
     this.lesson.lesson_desc = this.lessonFrom.controls['lesson_desc'].value;
     this.lesson.lesson_url = this.lessonFrom.controls['lesson_url'].value;
     this.lessonService.putLesson(this.id, this.lesson).subscribe( (response) =>{
-      this.messageService.add({severity:'success', summary: 'Lesson', detail:'Lesson Created successfully'});
-      this.router.navigate(['instructor']);
+      this.messageService.add({severity:'success', summary: 'Lesson', detail:'Lesson Updated successfully'});
+      this.router.navigate(['instructor', this.lesson.course_id]);
     });
 
   }
