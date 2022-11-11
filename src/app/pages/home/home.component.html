@@ -39,31 +39,19 @@
           <div class="info info-horizontal info-hover-primary">
             <div class="description pl-4">
               <h5 class="title">Our Vision</h5>
-              <p class="paragraph">We envision a world where anyone, anywhere has the power to transform their life
-                through learning.</p>
+              <p class="paragraph">{{landing.vision}}</p>
             </div>
           </div>
           <div class="info info-horizontal info-hover-primary mt-5">
             <div class="description pl-4">
               <h5 class="title">Our believe</h5>
-              <p class="paragraph">Learning is the source of human progress. It has the power to transform our world
-                from illness to
-                health, from poverty to prosperity, from conflict to peace.
-                It has the power to transform our lives for ourselves, for our families, for our communities. No matter
-                who we are or where we are, learning empowers us to change and grow
-                and redefine what’s possible. That’s why access to the best learning is a right, not a privilege. And
-                that’s why EmiCode is here. We partner with the best institutions to bring the best learning to every
-                corner of the world. So that anyone, anywhere has the power to
-                transform their life through learning.</p>
+              <p class="paragraph">{{landing.believe}}</p>
             </div>
           </div>
           <div class="info info-horizontal info-hover-primary mt-5">
             <div class="description pl-4">
               <h5 class="title">Our Mission</h5>
-              <p class="paragraph">Improving lives through learning, whether you want to learn or to share what you
-                know, you’ve come to
-                the right place. As a global destination for online learning, we connect people through knowledge.
-              </p>
+              <p class="paragraph">{{landing.mission}}</p>
             </div>
           </div>
         </div>
@@ -94,14 +82,14 @@
                   <del>MAD {{course.course_original_price}}</del>
                 </small> <span class="font-weight-bolder">MAD {{course.course_price}}</span></p>
                 <a class="btn btn-primary text-white font-weight-bolder float-right"
-                   href="coursedetails.php?course_id='.$course_id.'">Enroll</a>
+                   (click)="onClickCourse(course.course_id)">Enroll</a>
               </div>
             </div>
           </ng-container>
         </ng-container>
       </div>
       <div class="d-flex align-items-center justify-content-center">
-        <a href="http://localhost:63343/E-Learning/courses.php" class="btn btn-white mt-4" target="_blank">See All Courses</a>
+        <a routerLink="/courses" class="btn btn-white mt-4">See All Courses</a>
       </div>
     </div>
   </div>
